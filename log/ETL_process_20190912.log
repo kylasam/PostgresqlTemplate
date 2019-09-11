@@ -1,0 +1,90 @@
+INFO::2019-09-12 00:00:56.693  From Module = ":main:" Message=> Started the ETL process.....
+INFO::2019-09-12 00:00:56.693  From Module = ":db_connect_postgresql:" Message=> Connecting to the PostgreSQL database....
+INFO::2019-09-12 00:00:56.928  From Module = ":db_connect_postgresql:" Message=> Postgresql Connection established Successfully....
+WARNING::2019-09-12 00:00:56.929  From Module = ":db_table_setup:" Message=> Dropping the table "cust_mstr" will happen in this phase..
+INFO::2019-09-12 00:00:57.154  From Module = ":db_table_setup:" Message=> Query for Dropping table "cust_mstr" has EXECUTED SUCESSFULLY!!. Table creation process Initiated .
+INFO::2019-09-12 00:00:57.466  From Module = ":db_table_setup:" Message=> Table "cust_mstr" CREATED SUCCESSFULLY!!! .
+WARNING::2019-09-12 00:00:57.490  From Module = ":db_table_setup:" Message=> Dropping the table "cust_mstr_delta" will happen in this phase..
+INFO::2019-09-12 00:00:57.491  From Module = ":db_table_setup:" Message=> Query for Dropping table "cust_mstr_delta" has EXECUTED SUCESSFULLY!!. Table creation process Initiated .
+INFO::2019-09-12 00:00:57.493  From Module = ":db_table_setup:" Message=> Table "cust_mstr_delta" CREATED SUCCESSFULLY!!! .
+INFO::2019-09-12 00:00:57.504  From Module = ":load_csv_to_postgres_db:" Message=>  Master table Load Process Started.
+INFO::2019-09-12 00:00:57.505  From Module = ":load_csv_to_postgres_db:" Message=> Columns that will be load in this phase are id,Name,Hire_date,Sep_date,city..
+INFO::2019-09-12 00:00:57.505  From Module = ":load_csv_to_postgres_db:" Message=> In the source file C:\\tmp\Customer_source_table.csv there were total of 5 lines present excluding Header.
+INFO::2019-09-12 00:00:57.538  From Module = ":load_csv_to_postgres_db:" Message=> Table "cust_mstr" is being loaded with 5 records Successfully..
+INFO::2019-09-12 00:00:57.538  From Module = ":load_csv_to_postgres_db:" Message=> Table Load for cust_mstr COMPLETED SUCCESSFULLY!!!.
+INFO::2019-09-12 00:00:57.555  From Module = ":load_csv_to_postgres_db:" Message=>  Delta Table Load Process Started.
+INFO::2019-09-12 00:00:57.555  From Module = ":load_csv_to_postgres_db:" Message=> Columns that will be load in this phase are id,Name,Hire_date,Sep_date,city,Indicator..
+INFO::2019-09-12 00:00:57.555  From Module = ":load_csv_to_postgres_db:" Message=> In the source file C:\\tmp\delta_table.csv there were total of 4 lines present excluding Header.
+INFO::2019-09-12 00:00:57.557  From Module = ":load_csv_to_postgres_db:" Message=> Table "cust_mstr_delta" is being loaded with 4 records Successfully..
+INFO::2019-09-12 00:00:57.557  From Module = ":load_csv_to_postgres_db:" Message=> Table Load for cust_mstr_delta COMPLETED SUCCESSFULLY!!!.
+INFO::2019-09-12 00:00:57.558  From Module = ":db_perform_delata_load:" Message=> Initializing the process for the Data Load from "cust_mstr_delta" to the target table "cust_mstr"..
+INFO::2019-09-12 00:00:57.558  From Module = ":db_perform_delata_load:" Message=> Try block gets kicked for the Delta process into the table "cust_mstr" from the table "cust_mstr_delta"..
+INFO::2019-09-12 00:00:57.582  From Module = ":db_perform_delata_load:" Message=> Table "cust_mstr" has been INSERTED with NEW RECORDS SUCCESSFULLY.
+INFO::2019-09-12 00:00:57.582  From Module = ":db_perform_delata_load:" Message=> Initializing the process for Drop records on"cust_mstr" from delta whose indicator is D.
+INFO::2019-09-12 00:00:57.598  From Module = ":db_perform_delata_load:" Message=> Table "cust_mstr" has been DELETED with OLD RECORDS SUCCESSFULLY.
+INFO::2019-09-12 00:00:57.598  From Module = ":db_perform_delata_load:" Message=> Initializing the process for Update records in "cust_mstr" from delta whose indicator is U.
+INFO::2019-09-12 00:00:57.600  From Module = ":db_perform_delata_load:" Message=> Table "cust_mstr" has been UPDATED SUCCESSFULLY.
+INFO::2019-09-12 00:00:57.600  From Module = ":db_extract_databse:" Message=> Process has kick started for Extract the Master data process.....
+INFO::2019-09-12 00:00:57.615  From Module = ":db_extract_databse:" Message=> Table "cust_mstr" has been EXPORTED SUCCESSFULLY into a file in the path "C:\\tmp\extract.csv" without any errors!!!.
+INFO::2019-09-12 00:00:57.616  From Module = ":ad_hoc_process:" Message=> Initializing the process for the Ad hoc process for the "cust_mstr" processing ""..
+INFO::2019-09-12 00:00:57.617  From Module = ":ad_hoc_process:" Message=> Table "cust_mstr" has been EXECUTED SUCCESSFULLY.
+INFO::2019-09-12 00:01:22.984  From Module = ":main:" Message=> Started the ETL process.....
+INFO::2019-09-12 00:01:22.984  From Module = ":db_connect_postgresql:" Message=> Connecting to the PostgreSQL database....
+INFO::2019-09-12 00:01:23.036  From Module = ":db_connect_postgresql:" Message=> Postgresql Connection established Successfully....
+WARNING::2019-09-12 00:01:23.036  From Module = ":db_table_setup:" Message=> Dropping the table "cust_mstr" will happen in this phase..
+INFO::2019-09-12 00:01:23.039  From Module = ":db_table_setup:" Message=> Query for Dropping table "cust_mstr" has EXECUTED SUCESSFULLY!!. Table creation process Initiated .
+INFO::2019-09-12 00:01:23.077  From Module = ":db_table_setup:" Message=> Table "cust_mstr" CREATED SUCCESSFULLY!!! .
+WARNING::2019-09-12 00:01:23.082  From Module = ":db_table_setup:" Message=> Dropping the table "cust_mstr_delta" will happen in this phase..
+INFO::2019-09-12 00:01:23.082  From Module = ":db_table_setup:" Message=> Query for Dropping table "cust_mstr_delta" has EXECUTED SUCESSFULLY!!. Table creation process Initiated .
+INFO::2019-09-12 00:01:23.102  From Module = ":db_table_setup:" Message=> Table "cust_mstr_delta" CREATED SUCCESSFULLY!!! .
+INFO::2019-09-12 00:01:23.105  From Module = ":load_csv_to_postgres_db:" Message=>  Master table Load Process Started.
+INFO::2019-09-12 00:01:23.105  From Module = ":load_csv_to_postgres_db:" Message=> Columns that will be load in this phase are id,Name,Hire_date,Sep_date,city..
+INFO::2019-09-12 00:01:23.105  From Module = ":load_csv_to_postgres_db:" Message=> In the source file C:\\tmp\Customer_source_table.csv there were total of 5 lines present excluding Header.
+INFO::2019-09-12 00:01:23.108  From Module = ":load_csv_to_postgres_db:" Message=> Table "cust_mstr" is being loaded with 5 records Successfully..
+INFO::2019-09-12 00:01:23.109  From Module = ":load_csv_to_postgres_db:" Message=> Table Load for cust_mstr COMPLETED SUCCESSFULLY!!!.
+INFO::2019-09-12 00:01:23.109  From Module = ":load_csv_to_postgres_db:" Message=>  Delta Table Load Process Started.
+INFO::2019-09-12 00:01:23.109  From Module = ":load_csv_to_postgres_db:" Message=> Columns that will be load in this phase are id,Name,Hire_date,Sep_date,city,Indicator..
+INFO::2019-09-12 00:01:23.109  From Module = ":load_csv_to_postgres_db:" Message=> In the source file C:\\tmp\delta_table.csv there were total of 4 lines present excluding Header.
+INFO::2019-09-12 00:01:23.111  From Module = ":load_csv_to_postgres_db:" Message=> Table "cust_mstr_delta" is being loaded with 4 records Successfully..
+INFO::2019-09-12 00:01:23.112  From Module = ":load_csv_to_postgres_db:" Message=> Table Load for cust_mstr_delta COMPLETED SUCCESSFULLY!!!.
+INFO::2019-09-12 00:01:23.112  From Module = ":db_perform_delata_load:" Message=> Initializing the process for the Data Load from "cust_mstr_delta" to the target table "cust_mstr"..
+INFO::2019-09-12 00:01:23.112  From Module = ":db_perform_delata_load:" Message=> Try block gets kicked for the Delta process into the table "cust_mstr" from the table "cust_mstr_delta"..
+INFO::2019-09-12 00:01:23.113  From Module = ":db_perform_delata_load:" Message=> Table "cust_mstr" has been INSERTED with NEW RECORDS SUCCESSFULLY.
+INFO::2019-09-12 00:01:23.113  From Module = ":db_perform_delata_load:" Message=> Initializing the process for Drop records on"cust_mstr" from delta whose indicator is D.
+INFO::2019-09-12 00:01:23.115  From Module = ":db_perform_delata_load:" Message=> Table "cust_mstr" has been DELETED with OLD RECORDS SUCCESSFULLY.
+INFO::2019-09-12 00:01:23.115  From Module = ":db_perform_delata_load:" Message=> Initializing the process for Update records in "cust_mstr" from delta whose indicator is U.
+INFO::2019-09-12 00:01:23.117  From Module = ":db_perform_delata_load:" Message=> Table "cust_mstr" has been UPDATED SUCCESSFULLY.
+INFO::2019-09-12 00:01:23.117  From Module = ":db_extract_databse:" Message=> Process has kick started for Extract the Master data process.....
+INFO::2019-09-12 00:01:23.119  From Module = ":db_extract_databse:" Message=> Table "cust_mstr" has been EXPORTED SUCCESSFULLY into a file in the path "C:\\tmp\extract.csv" without any errors!!!.
+INFO::2019-09-12 00:01:23.120  From Module = ":ad_hoc_process:" Message=> Initializing the process for the Ad hoc process for the "cust_mstr" processing ""..
+INFO::2019-09-12 00:01:23.120  From Module = ":ad_hoc_process:" Message=> Table "cust_mstr" has been EXECUTED SUCCESSFULLY.
+INFO::2019-09-12 00:01:41.263  From Module = ":main:" Message=> Started the ETL process.....
+INFO::2019-09-12 00:01:41.263  From Module = ":db_connect_postgresql:" Message=> Connecting to the PostgreSQL database....
+INFO::2019-09-12 00:01:41.317  From Module = ":db_connect_postgresql:" Message=> Postgresql Connection established Successfully....
+WARNING::2019-09-12 00:01:41.317  From Module = ":db_table_setup:" Message=> Dropping the table "cust_mstr" will happen in this phase..
+INFO::2019-09-12 00:01:41.320  From Module = ":db_table_setup:" Message=> Query for Dropping table "cust_mstr" has EXECUTED SUCESSFULLY!!. Table creation process Initiated .
+INFO::2019-09-12 00:01:41.409  From Module = ":db_table_setup:" Message=> Table "cust_mstr" CREATED SUCCESSFULLY!!! .
+WARNING::2019-09-12 00:01:41.441  From Module = ":db_table_setup:" Message=> Dropping the table "cust_mstr_delta" will happen in this phase..
+INFO::2019-09-12 00:01:41.442  From Module = ":db_table_setup:" Message=> Query for Dropping table "cust_mstr_delta" has EXECUTED SUCESSFULLY!!. Table creation process Initiated .
+INFO::2019-09-12 00:01:41.444  From Module = ":db_table_setup:" Message=> Table "cust_mstr_delta" CREATED SUCCESSFULLY!!! .
+INFO::2019-09-12 00:01:41.462  From Module = ":load_csv_to_postgres_db:" Message=>  Master table Load Process Started.
+INFO::2019-09-12 00:01:41.462  From Module = ":load_csv_to_postgres_db:" Message=> Columns that will be load in this phase are id,Name,Hire_date,Sep_date,city..
+INFO::2019-09-12 00:01:41.462  From Module = ":load_csv_to_postgres_db:" Message=> In the source file C:\\tmp\Customer_source_table.csv there were total of 5 lines present excluding Header.
+INFO::2019-09-12 00:01:41.473  From Module = ":load_csv_to_postgres_db:" Message=> Table "cust_mstr" is being loaded with 5 records Successfully..
+INFO::2019-09-12 00:01:41.474  From Module = ":load_csv_to_postgres_db:" Message=> Table Load for cust_mstr COMPLETED SUCCESSFULLY!!!.
+INFO::2019-09-12 00:01:41.474  From Module = ":load_csv_to_postgres_db:" Message=>  Delta Table Load Process Started.
+INFO::2019-09-12 00:01:41.474  From Module = ":load_csv_to_postgres_db:" Message=> Columns that will be load in this phase are id,Name,Hire_date,Sep_date,city,Indicator..
+INFO::2019-09-12 00:01:41.474  From Module = ":load_csv_to_postgres_db:" Message=> In the source file C:\\tmp\delta_table.csv there were total of 4 lines present excluding Header.
+INFO::2019-09-12 00:01:41.509  From Module = ":load_csv_to_postgres_db:" Message=> Table "cust_mstr_delta" is being loaded with 4 records Successfully..
+INFO::2019-09-12 00:01:41.509  From Module = ":load_csv_to_postgres_db:" Message=> Table Load for cust_mstr_delta COMPLETED SUCCESSFULLY!!!.
+INFO::2019-09-12 00:01:41.509  From Module = ":db_perform_delata_load:" Message=> Initializing the process for the Data Load from "cust_mstr_delta" to the target table "cust_mstr"..
+INFO::2019-09-12 00:01:41.509  From Module = ":db_perform_delata_load:" Message=> Try block gets kicked for the Delta process into the table "cust_mstr" from the table "cust_mstr_delta"..
+INFO::2019-09-12 00:01:41.520  From Module = ":db_perform_delata_load:" Message=> Table "cust_mstr" has been INSERTED with NEW RECORDS SUCCESSFULLY.
+INFO::2019-09-12 00:01:41.521  From Module = ":db_perform_delata_load:" Message=> Initializing the process for Drop records on"cust_mstr" from delta whose indicator is D.
+INFO::2019-09-12 00:01:41.539  From Module = ":db_perform_delata_load:" Message=> Table "cust_mstr" has been DELETED with OLD RECORDS SUCCESSFULLY.
+INFO::2019-09-12 00:01:41.539  From Module = ":db_perform_delata_load:" Message=> Initializing the process for Update records in "cust_mstr" from delta whose indicator is U.
+INFO::2019-09-12 00:01:41.541  From Module = ":db_perform_delata_load:" Message=> Table "cust_mstr" has been UPDATED SUCCESSFULLY.
+INFO::2019-09-12 00:01:41.541  From Module = ":db_extract_databse:" Message=> Process has kick started for Extract the Master data process.....
+INFO::2019-09-12 00:01:41.544  From Module = ":db_extract_databse:" Message=> Table "cust_mstr" has been EXPORTED SUCCESSFULLY into a file in the path "C:\\tmp\extract.csv" without any errors!!!.
+INFO::2019-09-12 00:01:41.544  From Module = ":ad_hoc_process:" Message=> Initializing the process for the Ad hoc process for the "cust_mstr" processing ""..
+INFO::2019-09-12 00:01:41.544  From Module = ":ad_hoc_process:" Message=> Table "cust_mstr" has been EXECUTED SUCCESSFULLY.
